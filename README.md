@@ -16,7 +16,7 @@ A one-click **OCI Resource Manager** (ORM) stack that prepares identity and guar
 
 **Alternative (no tag yet):**
 ```
-https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/SaurabhOCI/GenAI-Text-Visual-Sandbox/archive/refs/tags/GenAI-Text-Visual-Sandbox.zip
+https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/ou-developers/GenAI-TextVisual-Sandbox-Stack/archive/refs/heads/main.zip
 ```
 
 > Tip: Open your `zipUrl` in an **incognito** window—the link must download a `.zip` with no login prompt. Make sure your `.tf` files are committed at the **repo root** of that tag/branch.
