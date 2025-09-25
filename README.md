@@ -12,9 +12,7 @@ A one-click **OCI Resource Manager** (ORM) stack that prepares identity and guar
 
 ## Deploy with One Click
 
-[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](
-  https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/SaurabhOCI/GenAI-Text-Visual-Sandbox/archive/refs/tags/GenAI-Text-Visual-Sandbox.zip
-)
+[![Deploy to Oracle Cloud](https://oci-resourcemanager-plugin.plugins.oci.oraclecloud.com/latest/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/ou-developers/GenAI-TextVisual-Sandbox-Stack/archive/refs/heads/main.zip)
 
 **Alternative (no tag yet):**
 ```
