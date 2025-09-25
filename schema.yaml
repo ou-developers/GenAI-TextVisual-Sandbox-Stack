@@ -1,0 +1,109 @@
+title: "Gen-AI Platform Setup"
+description: "Creates compartments, groups, and policies for Gen-AI text generation experiments"
+schemaVersion: 1.1.0
+version: "1.0.0"
+locale: "en"
+
+variableGroups:
+  - title: "General Configuration"
+    visible: true
+    variables:
+      - tenancy_ocid
+      - region
+      - compartment_name
+      - compartment_description
+
+  - title: "Groups Configuration"
+    visible: true
+    variables:
+      - create_groups
+      - genai_admin_group_name
+      - genai_user_group_name
+
+  - title: "Tags Configuration"
+    visible: true
+    variables:
+      - enable_tagging
+      - project_tag
+
+variables:
+  tenancy_ocid:
+    type: string
+    title: "Tenancy OCID"
+    description: "The OCID of your tenancy"
+    required: true
+
+  region:
+    type: oci:identity:region:name
+    title: "Region"
+    description: "The region where resources will be created"
+    required: true
+
+  compartment_name:
+    type: string
+    title: "Compartment Name"
+    description: "Name for the Gen-AI compartment"
+    required: true
+    default: "genai-experiments"
+    pattern: "^[a-zA-Z][a-zA-Z0-9_-]*$"
+
+  compartment_description:
+    type: string
+    title: "Compartment Description"
+    description: "Description for the Gen-AI compartment"
+    required: false
+    default: "Compartment for Gen-AI text generation experiments and resources"
+
+  create_groups:
+    type: boolean
+    title: "Create IAM Groups"
+    description: "Whether to create IAM groups for Gen-AI access"
+    required: false
+    default: true
+
+  genai_admin_group_name:
+    type: string
+    title: "Gen-AI Admin Group Name"
+    description: "Name for the Gen-AI administrators group"
+    required: false
+    default: "genai-admins"
+    visible: ${create_groups}
+
+  genai_user_group_name:
+    type: string
+    title: "Gen-AI Users Group Name"
+    description: "Name for the Gen-AI users group"
+    required: false
+    default: "genai-users"
+    visible: ${create_groups}
+
+  enable_tagging:
+    type: boolean
+    title: "Enable Resource Tagging"
+    description: "Whether to apply tags to created resources"
+    required: false
+    default: true
+
+  project_tag:
+    type: string
+    title: "Project Tag"
+    description: "Project tag to apply to resources"
+    required: false
+    default: "genai-platform"
+    visible: ${enable_tagging}
+
+outputs:
+  compartment_ocid:
+    type: copyableString
+    title: "Compartment OCID"
+    description: "OCID of the created compartment"
+
+  genai_admin_group_ocid:
+    type: copyableString
+    title: "Gen-AI Admin Group OCID"
+    description: "OCID of the Gen-AI admin group"
+
+  genai_user_group_ocid:
+    type: copyableString
+    title: "Gen-AI User Group OCID" 
+    description: "OCID of the Gen-AI user group"
